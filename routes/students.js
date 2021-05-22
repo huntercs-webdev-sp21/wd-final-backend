@@ -54,8 +54,7 @@ router.delete('/:id', function(req, res, next) {
     .catch(err => next(err));
 });
 
-/******************* EDIT *********************/
-
+/** EDIT STUDENT */
 router.put('/:id', ash(async(req, res) => {
   await Student.update(req.body,
         { where: {id: req.params.id} }
