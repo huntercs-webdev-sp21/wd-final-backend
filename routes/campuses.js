@@ -21,7 +21,7 @@ router.get('/:id', ash(async(req, res) => {
 router.post('/', function(req, res, next) {
   Campus.create(req.body)
     .then(createdCampus => res.status(200).json(createdCampus))
-    .catch(err => next(err));
+    .catch(err => res.status(500).json(err.errors[0]));
 });
 
 /** DELETE CAMPUS */
